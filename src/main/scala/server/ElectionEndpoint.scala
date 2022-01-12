@@ -1,9 +1,9 @@
 package com.political.speeches
 package server
 
-import com.political.speeches.service.StatisticsLogic.processPoliticans
+import data.Politician
+import service.StatisticsLogic.processPoliticans
 
-import com.political.speeches.data.Politician
 import kantan.csv._
 import kantan.csv.ops._
 import org.http4s._

@@ -1,6 +1,7 @@
 package com.political.speeches
 
-import com.political.speeches.data.Politician
+import data.Politician
+
 import org.scalatest.EitherValues
 import org.scalatest.matchers.must.Matchers
 import org.scalatest.wordspec.AnyWordSpec

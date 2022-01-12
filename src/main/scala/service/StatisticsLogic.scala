@@ -10,15 +10,22 @@ object StatisticsLogic {
       case xs if xs.length == 1 => Some(xs.head)
       case _ => None
     }
-    val mostInternalSecuritySpeech = politicians.filter(p => p.topic == "Internal Security").map(_.speaker).take(2) match {
+    val mostInternalSecuritySpeech = politicians.filter(p => p.topic.trim.equalsIgnoreCase("Internal Security")).map(_.speaker).take(2) match {
       case xs if xs.length == 1 => Some(xs.head)
       case _ => None
     }
-    val fewestWordsOverall = politicians.sortBy(_.words).take(2) match {
-      case xs if xs.length == 1 => Some(xs.head.speaker)
-      case _ => None
-    }
-    Result(most2013Speeches, mostInternalSecuritySpeech, fewestWordsOverall)
+    /*val fewestWordsOverall = politicians.groupBy(_.speaker)
+    val mapWithNames = fewestWordsOverall.map {
+      nameToTaskMap: (String, List[Politician]) =>
+        val (name, taskList) = nameToTaskMap
+        val valueList = taskList.map(_.words).flatten
+        val sum: Int = valueList.sum
+        (name, sum)
+    }*/
+
+
+
+    Result(most2013Speeches, mostInternalSecuritySpeech, None)
   }
 
 }
