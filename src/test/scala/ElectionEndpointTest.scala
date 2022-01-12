@@ -17,7 +17,7 @@ class ElectionEndpointTest extends AnyWordSpec with Matchers with OptionValues w
         "endpoint was able to parse URL and process CSV" in {
           val request = Request[Task](
             method = Method.GET,
-            uri = Uri.unsafeFromString("evaluation?url=https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv")
+            uri = Uri.unsafeFromString("evaluation?url1=https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv")
           )
 
           runRequest(new ElectionEndpoint())(request).status mustBe Status.Ok

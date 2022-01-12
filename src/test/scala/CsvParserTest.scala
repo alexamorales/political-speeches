@@ -13,7 +13,9 @@ class CsvParserTest  extends AnyWordSpec with Matchers with OptionValues {
     import kantan.csv._
     import kantan.csv.ops._
 
-     val csv = new File("politicians.csv")
+     val csv = scala.io.Source.fromFile("politicians.csv")
+
+
 
 
 

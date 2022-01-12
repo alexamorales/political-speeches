@@ -8,6 +8,7 @@ out/
 .idea_modules/
 *.iws
 .idea/*
+.bsp/*
 
 ### SBT template
 # Simple Build Tool
