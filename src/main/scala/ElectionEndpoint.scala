@@ -1,16 +1,16 @@
 package com.political.speeches
 
-import com.political.speeches.Service.processPoliticans
+import Service.processPoliticans
+
 import kantan.csv._
 import kantan.csv.ops._
 import org.http4s._
 import org.http4s.circe.CirceEntityCodec._
 import org.http4s.dsl.Http4sDsl
 import org.http4s.implicits._
+import zio.Task
 import zio.interop.catz._
-import zio.{Task, _}
 
-import java.net.URL
 import scala.util.{Failure, Success, Try}
 
 class ElectionEndpoint extends Http4sDsl[Task] {
