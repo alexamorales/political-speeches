@@ -1,12 +1,13 @@
 package com.political.speeches
+package server
 
-import ElectionEndpoint.electionRoute
+import server.ElectionEndpoint.electionRoute
 
 import org.http4s.server.blaze.BlazeServerBuilder
-import zio._
-import zio.console._
+import zio.console.{Console, putStrLn}
 import zio.interop.catz._
 import zio.interop.catz.implicits._
+import zio.{App, ExitCode, Task, URIO, ZEnv, ZIO}
 
 object Init extends App {
 

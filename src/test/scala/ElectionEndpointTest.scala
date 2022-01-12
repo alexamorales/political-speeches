@@ -1,5 +1,6 @@
 package com.political.speeches
 
+import com.political.speeches.server.ElectionEndpoint
 import org.http4s._
 import org.scalatest.OptionValues
 import org.scalatest.matchers.must.Matchers

@@ -1,7 +1,9 @@
 package com.political.speeches
 
-import io.circe.{Decoder, Encoder}
+import data.{Politician, Result}
+
 import io.circe.generic.semiauto.{deriveDecoder, deriveEncoder}
+import io.circe.{Decoder, Encoder}
 import kantan.csv.RowDecoder
 import org.http4s.dsl.impl.OptionalValidatingQueryParamDecoderMatcher
 import org.http4s.{ParseFailure, QueryParamDecoder}
@@ -33,7 +35,7 @@ object ElemInstances {
     (n: String, s: String, d: String, w: Int) => {
       val sdf = new SimpleDateFormat("yyyy-MM-dd")
       val cd = sdf.parse(d).toInstant.atZone(ZoneId.systemDefault()).toLocalDate;
-      Politician(n, s, cd, w)
+      data.Politician(n, s, cd, w)
     }
 
   }

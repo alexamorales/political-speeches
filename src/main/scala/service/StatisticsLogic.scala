@@ -1,8 +1,11 @@
 package com.political.speeches
+package service
 
-object Service {
+import data.{Politician, Result}
 
-   def processPoliticans(politicians: List[Politician]): Result = {
+object StatisticsLogic {
+
+  def processPoliticans(politicians: List[Politician]): Result = {
     val most2013Speeches = politicians.filter(p => p.date.getYear == 2013).map(_.speaker).take(2) match {
       case xs if xs.length == 1 => Some(xs.head)
       case _ => None
